@@ -152,10 +152,8 @@ app.layout = html.Div(children=[
 def update_crop_name(click, N, P, K, temp, hum, ph, rain):
     trigger = [p['prop_id'] for p in dash.callback_context.triggered][0]
     features_str = [N, P, K, temp, hum, ph, rain]
-    print(features_str)
     if len(features_str) == 7 and None not in features_str:
         features = [float(s) for s in features_str]
-        print(features)
         pred = model_inference(np.array([features]))
         pred_crop_name = pred[0]
         pred_img_file = get_img_file(pred)
