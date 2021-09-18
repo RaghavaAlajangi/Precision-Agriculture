@@ -6,7 +6,7 @@ gunicorn==20.1.0
 numpy==1.20.3 
 numpy-base==1.20.3  
 pickleshare==0.7.5 
-plotly=5.3.1 
+plotly==5.3.1 
  
 python==3.7.4 
 python-dateutil==2.8.1 
