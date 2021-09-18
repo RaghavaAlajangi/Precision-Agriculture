@@ -4,7 +4,6 @@ Created on Sat Sep 18 17:01:33 2021
 
 @author: raghava
 """
-
 import os
 import dash
 import pickle
@@ -12,7 +11,7 @@ import base64
 import numpy as np 
 from dash import html
 from dash import dcc
-from dash.dependencies import Input, Output, State
+from dash.dependencies import Input, Output
 
 # DATA_PATH = 'Crop_recommendation.csv'
 TRAINED_MODEL_PATH = 'KNN_model_crop_prediction.pkl'
@@ -189,4 +188,4 @@ def update_crop_name(click, N, P, K, temp, hum, ph, rain):
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True)  
+    app.run_server(debug=False)  
