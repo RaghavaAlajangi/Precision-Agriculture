@@ -2,25 +2,24 @@
 # $ conda create --name <env> --file <this file>
 # platform: win-64
 
-dash=2.0.0=pypi_0
-dash-core-components=2.0.0=pypi_0
-dash-html-components=2.0.0=pypi_0
-dash-table=5.0.0=pypi_0
-gunicorn=20.1.0=pypi_0
-numpy=1.20.3=py39ha4e8547_0
-numpy-base=1.20.3=py39hc2deb75_0
+dash=2.0.0 
+dash-core-components=2.0.0 
+dash-html-components=2.0.0 
+dash-table=5.0.0 
+gunicorn=20.1.0 
+numpy=1.20.3 
+numpy-base=1.20.3 
  
-pandas=1.3.2=py39h6214cd6_0
+pandas=1.3.2 
  
-pickleshare=0.7.5=pyhd3eb1b0_1003
-pillow=8.3.1=py39h4fa10fc_0
-pip=21.2.4=py38haa95532_0
-plotly=5.3.1=pypi_0
+pickleshare=0.7.5 
+pillow=8.3.1 
+pip=21.2.4 
+plotly=5.3.1 
  
-python=3.9.7=h6244533_1
-python-dateutil=2.8.1=py_0
-python_abi=3.9=2_cp39
+python=3.9.7 
+python-dateutil=2.8.1 
+python_abi=3.9 
  
-scikit-learn=0.23.2=py39he931e04_3
-scipy=1.7.1=py39hbe87c03_2
- 
+scikit-learn=0.23.2 
+scipy=1.7.1 
