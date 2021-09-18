@@ -40,6 +40,8 @@ def get_figure(img_path):
 # Initialise the app
 app = dash.Dash(__name__)
 
+server = app.server
+
 # Define the app
 app.layout = html.Div(children=[
                   html.Div(className='row',  # Define the row element
@@ -113,7 +115,7 @@ app.layout = html.Div(children=[
                            html.Div(className='eight columns div-for-charts bg-grey',  # Define the right element
                                     style={'background-image':'url("/assets/agriculture1.png")','height':150,'width':1000},
                                     children = [
-                                    html.H2('Precision-Agriculture', style = {'text-align':'center', "padding-top": "10px", 
+                                    html.H2('Precision Agriculture', style = {'text-align':'center', "padding-top": "10px", 
                                                                     'font-size': '35px', 'color': 'red'}),
                                         
                                     html.Div([
