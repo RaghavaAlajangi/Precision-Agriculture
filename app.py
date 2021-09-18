@@ -188,4 +188,4 @@ def update_crop_name(click, N, P, K, temp, hum, ph, rain):
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=False)  
+    app.run_server(debug=True)  
