@@ -7,9 +7,7 @@ numpy==1.20.3
 #numpy-base==1.20.3  
 pickleshare==0.7.5 
 plotly==5.3.1 
- 
-python==3.7.4 
+python==3.9.7 
 python-dateutil==2.8.1 
 python_abi==3.9 
- 
 scikit-learn==0.23.2 
