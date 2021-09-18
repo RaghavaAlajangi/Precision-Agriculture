@@ -2,7 +2,7 @@
 """
 Created on Sat Sep 18 17:01:33 2021
 
-@author: ragha
+@author: raghava
 """
 
 import os
@@ -10,12 +10,8 @@ import dash
 import pickle
 import base64
 import numpy as np 
-import pandas as pd
-from PIL import Image
 from dash import html
 from dash import dcc
-import plotly.express as px
-import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
 
 DATA_PATH = 'Crop_recommendation.csv'
