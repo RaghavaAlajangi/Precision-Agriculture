@@ -214,7 +214,7 @@ app.layout = html.Div(children=[
                                         html.Div([ 
                                             html.H2('Prediction will be displayed here:', style = {"padding-top": "0px", 'font-size': '25px'}),
                                             
-                                            html.Img(id = "prediction_image", style = {'width':500,})
+                                            html.Img(id = "prediction_image")
                                             
                                         ], className="six columns"),
                                         
@@ -222,6 +222,7 @@ app.layout = html.Div(children=[
                                     ], className="row"),
                                         
                                    ]),  # eight column Div
+                           html.Br(),html.Br(),html.Br()
                                
                           ]) # row Div
                     ]) # main Div
@@ -290,7 +291,7 @@ def reset_inputs(click):
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True)  
+    app.run_server(debug=False)  
     
     
     
