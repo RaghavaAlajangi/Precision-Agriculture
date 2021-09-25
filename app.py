@@ -26,13 +26,13 @@ def crop_id_col(df = None):
     df['crop_id'] = [mapping[c] for c in df['label']]
     return df
 
-def get_sample_data(df = None, col_name = None, No_of_samples = 20):
-    mapping = {c : i for i, c in enumerate(list(df['label'].unique()), 1)}
-    frames = []
-    for k, v in mapping.items():
-        samp = df.loc[(df[col_name] ==v)].iloc[:No_of_samples]
-        frames.append(samp)
-    return pd.concat(frames)
+# def get_sample_data(df = None, col_name = None, No_of_samples = 20):
+#     mapping = {c : i for i, c in enumerate(list(df['label'].unique()), 1)}
+#     frames = []
+#     for k, v in mapping.items():
+#         samp = df.loc[(df[col_name] ==v)].iloc[:No_of_samples]
+#         frames.append(samp)
+#     return pd.concat(frames)
 
 def data_grouping(df):
     dummy = pd.DataFrame()
@@ -58,16 +58,31 @@ def get_img_file(pred, crops_list = crop_img_files):
     img_file = [f for f in crops_list if crop_name in f][0]
     return img_file
     
-def get_figure(img_path):
+def get_image(img_path):
     encoded_image = base64.b64encode(open(img_path, 'rb').read())
     img_src = 'data:image/png;base64,{}'.format(encoded_image.decode())
     return img_src
+
+def table_fig(data_df):
+        drop_table = go.Figure(
+                data=[go.Table(
+                header=dict(values=list(data_df.columns),
+                            fill_color='paleturquoise',
+                            align='left'),
+                cells=dict(values=[data_df.N, data_df.P, data_df.K, data_df.temperature, 
+                                   data_df.humidity, data_df.ph, data_df.rainfall, data_df.label],
+                           fill_color='lavender',
+                           align='left'))
+                    ])
+        drop_table.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+                                  'paper_bgcolor': 'rgba(0, 0, 0, 0)'
+                                })
+        return drop_table
 
 def build_fig(df):
     layout = go.Layout(
         margin={'l': 33, 'r': 40, 't': 20, 'b': 10},
         )
-    
     fig = go.Figure(
         go.Parcats(
             dimensions=[
@@ -103,9 +118,9 @@ def build_fig(df):
     return fig
 
 
-data = pd.read_csv(DATA_PATH)
-mod_df = crop_id_col(df = data)
-vis_df = data_grouping(mod_df)
+# data_df = pd.read_csv(DATA_PATH)
+# mod_df = crop_id_col(df = data_df)
+# vis_df = data_grouping(mod_df)
 
 # Initialise the app
 app = dash.Dash(__name__)
@@ -202,11 +217,23 @@ app.layout = html.Div(children=[
                                                                 }),
                                     
                                     html.Div([
+                                        dcc.Dropdown(
+                                                   id="drop_down",
+                                                   options=[
+                                                       {'label': 'Categorical graph', 'value': 'graph'},
+                                                       {'label': 'Data table', 'value': 'table'},
+                                                   ],
+                                                   style={'height':30, 'width':600},
+                                                   value='graph',
+                                                   clearable=False)
+                                            ]),
+                                    html.Br(),
+                                    html.Div([
                                     dcc.Graph(id='data_visualization',
                                               config={'displaylogo': False},
                                               style={'height':550,'width':1200},
-                                              animate=True,
-                                              figure = build_fig(vis_df)
+                                              #animate=True,
+                                              #figure = build_fig(vis_df)
                                               )
                                             ]),
                                     
@@ -226,6 +253,28 @@ app.layout = html.Div(children=[
                                
                           ]) # row Div
                     ]) # main Div
+
+
+@app.callback(Output("data_visualization", "figure"),
+              Input('drop_down', 'value'),
+              )
+def dropdown_options(drop_value):
+    data_df = pd.read_csv(DATA_PATH)
+    fig_table = table_fig(data_df)
+    
+    mod_df = crop_id_col(df = data_df)
+    vis_df = data_grouping(mod_df)
+    fig_graph = build_fig(vis_df)
+    
+    if drop_value == 'table':
+        return fig_table
+    
+    if drop_value == 'graph':
+        return fig_graph
+    
+    else:
+        dash.no_update
+
 
 @app.callback(Output("store_inputs", "data"),
               [Input('N', 'value'),
@@ -254,7 +303,7 @@ def update_crop_name(click, stored_inputs):
         pred = model_inference(np.array([features]))
         pred_crop_name = pred[0]
         pred_img_file = get_img_file(pred)
-        fig = get_figure(pred_img_file)
+        fig = get_image(pred_img_file)
         if 'submit_button' in trigger:
             return [fig,
                     html.P([f'Recommended crop:  {pred_crop_name.capitalize()}',
@@ -285,14 +334,11 @@ def update_crop_name(click, stored_inputs):
 def reset_inputs(click):
     trigger = [p['prop_id'] for p in dash.callback_context.triggered][0]
     if 'submit_button' in trigger:
-        return ['','','','','','','']
+        return ['']*7
     else:
         return dash.no_update
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=False)  
-    
-    
-    
-    
+    app.run_server(debug=True)  
+ 
