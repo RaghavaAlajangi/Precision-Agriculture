@@ -275,7 +275,6 @@ def dropdown_options(drop_value):
     else:
         dash.no_update
 
-
 @app.callback(Output("store_inputs", "data"),
               [Input('N', 'value'),
                Input("P", "value"),
@@ -298,9 +297,15 @@ def store_inputs(N, P, K, temp, hum, ph, rain):
 def update_crop_name(click, stored_inputs):
     trigger = [p['prop_id'] for p in dash.callback_context.triggered][0]
     if stored_inputs is not None:
-        features_str = list(stored_inputs.values())
-        features = [float(s) for s in features_str]
-        pred = model_inference(np.array([features]))
+        N = float(stored_inputs['N'])
+        P =float(stored_inputs['P'])
+        K =float(stored_inputs['K'])
+        temp =float(stored_inputs['temp'])
+        hum =float(stored_inputs['hum'])
+        ph =float(stored_inputs['ph'])
+        rain =float(stored_inputs['rain'])
+        
+        pred = model_inference(np.array([[N, P, K, temp, hum, ph, rain]]))
         pred_crop_name = pred[0]
         pred_img_file = get_img_file(pred)
         fig = get_image(pred_img_file)
@@ -340,5 +345,5 @@ def reset_inputs(click):
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True)  
+    app.run_server(debug=False)  
  
