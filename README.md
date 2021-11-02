@@ -24,7 +24,8 @@
 * Trained the KNN model with the preprocessed dataset, evaluated and tested.
 * I used dash API to develop a dashboard and integrated it with the evaluated KNN model to make future crop predictions based on input data.
 * You can have a look at how the final dashboard looks like here <https://precision-agriculture.herokuapp.com/>
-* As you can see in the dashboard, a user can enter the respective inputs and see the crop prediction when hitting the submit button.
+* As you can see in the dashboard, a user has to enter all the inputs and hit the submit button. As a result, based on the user inputs ML model will predict the crop name in the backend and display the corresponding image.
+* It also visualizes the dataset that has been used for training the model both graphically and in tabular form.
 * I used the Heroku platform to deploy the application for user interaction.
 
 ## Tools used
