@@ -1,9 +1,7 @@
 <h1 align="center">
   Precision-Agriculture app
 </h1>
-<h1 align="center">
-  <https://precision-agriculture.herokuapp.com/>
-</h1>
+
 
 
 <div align="center">
@@ -16,6 +14,9 @@
 * Every day, farms generate hundreds of data points about temperature, soil, water usage, weather conditions, and so on. 
 * This data is used in real-time with the help of AI and machine learning models to acquire important insights such as predicting the best time to sow seeds, determining crop choices, hybrid seed selection to generate higher yields, and so on.
 * AI technologies are assisting in the improvement of overall harvest quality and accuracy — a process known as precision agriculture.
+
+## APP
+<https://precision-agriculture.herokuapp.com/>
 
 ## Description
 * This project is an attempt to make an end-to-end AI application with available agricultural data in the Kaggle website.
