@@ -1,6 +1,9 @@
 <h1 align="center">
   Precision-Agriculture app
 </h1>
+<h1 align="center">
+  <https://precision-agriculture.herokuapp.com/>
+</h1>
 
 
 <div align="center">
@@ -17,7 +20,11 @@
 ## Description
 * This project is an attempt to make an end-to-end AI application with available agricultural data in the Kaggle website.
 * The data has been analyzed and cleaned to create a clean dataset for training.
-* <https://precision-agriculture.herokuapp.com/>
+* Trained the KNN model with the preprocessed dataset, evaluated and tested.
+* I used dash API to develop a dashboard and integrated it with the evaluated KNN model to make future crop predictions based on input data.
+* You can have a look at how the final dashboard looks like here <https://precision-agriculture.herokuapp.com/>
+* As you can see in the dashboard, a user can enter the respective inputs and see the crop prediction when hitting the submit button.
+* I used the Heroku platform to deploy the application for user interaction.
 
 ## Tools used
 * Python
