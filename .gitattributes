@@ -1,0 +1,2 @@
+# Exclude Jupyter Notebook files from language stats
+*.ipynb linguist-detectable=false
