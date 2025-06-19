@@ -179,11 +179,15 @@ app.layout = html.Div(
                             "Mohan application", style={"font-size": "35px"}
                         ),
                         html.H2(
-                            "1. Precision agriculture is currently popular. It helps farmers to develop intelligent agricultural strategies.",
+                            "1. Precision agriculture is currently popular. "
+                            "It helps farmers to develop intelligent "
+                            "agricultural strategies.",
                             style={"font-size": "20px"},
                         ),
                         html.H2(
-                            "2. Based on seven characteristics, this application will recommend the ideal crop for farmers to grow on their fileds.",
+                            "2. Based on seven characteristics, this "
+                            "application will recommend the ideal crop "
+                            "for farmers to grow on their fileds.",
                             style={"font-size": "20px"},
                         ),
                         html.Br(),
@@ -195,7 +199,8 @@ app.layout = html.Div(
                                 ),
                                 dcc.Input(
                                     id="N",
-                                    placeholder="Enter Nitrogen content in soil...",
+                                    placeholder="Enter Nitrogen content in "
+                                    "soil...",
                                     type="text",
                                     persistence=False,
                                     style={"width": "400px"},
@@ -210,7 +215,8 @@ app.layout = html.Div(
                                 ),
                                 dcc.Input(
                                     id="P",
-                                    placeholder="Enter Phosphorous content in soil...",
+                                    placeholder="Enter Phosphorous content in "
+                                    "soil...",
                                     type="text",
                                     persistence=False,
                                     style={"width": "400px"},
@@ -225,7 +231,8 @@ app.layout = html.Div(
                                 ),
                                 dcc.Input(
                                     id="K",
-                                    placeholder="Enter Potassium content in soil...",
+                                    placeholder="Enter Potassium content in "
+                                    "soil...",
                                     type="text",
                                     persistence=False,
                                     style={"width": "400px"},
@@ -270,7 +277,7 @@ app.layout = html.Div(
                                 ),
                                 dcc.Input(
                                     id="ph",
-                                    placeholder="Enter PH value of the soil...",
+                                    placeholder="Enter PH value of the soil..",
                                     type="text",
                                     persistence=False,
                                     style={"width": "400px"},
@@ -310,7 +317,7 @@ app.layout = html.Div(
                     ],
                 ),  # four column Div
                 html.Div(
-                    className="eight columns div-for-charts bg-grey",  # Define the right element
+                    className="eight columns div-for-charts bg-grey",
                     style={
                         "background-image": 'url("/assets/agriculture.png")',
                         "height": 150,
@@ -371,7 +378,8 @@ app.layout = html.Div(
                                 html.Div(
                                     [
                                         html.H2(
-                                            "Prediction will be displayed here:",
+                                            "Prediction will be displayed "
+                                            "here:",
                                             style={
                                                 "padding-top": "0px",
                                                 "font-size": "25px",
