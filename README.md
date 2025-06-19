@@ -5,7 +5,7 @@
 
 
 <div align="center">
-  <img src="readme_files/app_img.PNG" width="90%">
+  <img src="docs/app_img.PNG" width="90%">
 </div>
 
 ## Motivation
