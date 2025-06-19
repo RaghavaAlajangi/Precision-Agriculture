@@ -1,15 +1,8 @@
 import pickle
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
-from sklearn.metrics import (
-    ConfusionMatrixDisplay,
-    accuracy_score,
-    classification_report,
-    confusion_matrix,
-)
-from sklearn.model_selection import RandomizedSearchCV, train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 ROOT = Path(__file__).parents[1]
