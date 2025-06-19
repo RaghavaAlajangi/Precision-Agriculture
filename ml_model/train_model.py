@@ -1,4 +1,3 @@
-import os
 import pickle
 from pathlib import Path
 
@@ -11,14 +10,11 @@ from sklearn.metrics import (
     confusion_matrix,
 )
 from sklearn.model_selection import RandomizedSearchCV, train_test_split
-
-# import seaborn as sns
-# import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
 
-Path(__file__).parents[2]
+ROOT = Path(__file__).parents[1]
 
-DATA_PATH = "Crop_recommendation.csv"
+DATA_PATH = ROOT / "data" / "crops.csv"
 df = pd.read_csv(DATA_PATH)
 
 
@@ -45,6 +41,6 @@ y_pred = KNN_model.predict(X_test)
 
 
 # open a file, where you ant to store the data
-file = open("KNN_model_crop_prediction_new.pkl", "wb")
+file = open("model.pkl", "wb")
 # dump information to that file
 pickle.dump(KNN_model, file)
