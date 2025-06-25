@@ -44,7 +44,9 @@ app = Dash(
 )
 app._favicon = "icon.svg"
 
-server.config.update(SECRET_KEY=os.getenv("SECRET_KEY"))
+SECRET_KEY = os.getenv("SECRET_KEY", "Test123456789")
+
+server.config.update(SECRET_KEY=SECRET_KEY)
 
 # Login manager object will be used to login / logout users
 login_manager = LoginManager()
