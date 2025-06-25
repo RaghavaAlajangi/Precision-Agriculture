@@ -1,5 +1,10 @@
 dash
 numpy
-scikit-learn
 plotly
 pandas
+scikit-learn==1.6.1
+python-dotenv==1.1.0
+Flask-Login==0.6.3
+dash-bootstrap-components==2.0.3
+dash_mantine_components==2.0.0
+dash-iconify==0.1.2
