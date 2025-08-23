@@ -19,7 +19,7 @@ def layout():
                     dmc.Fieldset(
                         children=[
                             dmc.Title(
-                                "Login to RAGbot",
+                                "Login to AgroWise",
                                 order=1,
                                 c="#494646",
                                 style={"textAlign": "center"},
