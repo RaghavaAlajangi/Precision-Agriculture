@@ -1,19 +1,6 @@
 # 🌾 Precision Agriculture App 🌾
 
-<div align="center">
-  <img src="docs/app_thumbnail.jpg" width="90%">
-  
-</div>
-
-[Watch the Demo Video](docs/app.mp4)
-
-<p align="center">
-  <a href="https://precision-agriculture.herokuapp.com/">🖥️ Live App</a> •
-  <a href="#features">⚙️ Features</a> •
-  <a href="#tech-stack">🛠 Tech Stack</a> •
-  <a href="#how-it-works">🧠 How It Works</a> •
-  <a href="#getting-started">🚀 Getting Started</a>
-</p>
+![agro_wise](https://github.com/user-attachments/assets/7027ab91-ed05-48fb-8fff-f6c4c0b9d33c)
 
 ---
 
