@@ -1,6 +1,7 @@
 # 🌾 Precision Agriculture App 🌾
 
-![agro_wise](https://github.com/user-attachments/assets/7027ab91-ed05-48fb-8fff-f6c4c0b9d33c)
+![agro_wise_2](https://github.com/user-attachments/assets/41c5821a-0bb9-434a-a97c-172eb713f87b)
+
 
 ---
 
